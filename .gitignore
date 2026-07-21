@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.vscode/settings.json
+
+output/*
+!output/.gitkeep
+
+reports/*
+!reports/.gitkeep
+
+.env
