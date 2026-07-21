@@ -93,7 +93,7 @@ The analysis pipeline is organised into four layers:
            │                          │
            ▼                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   CapabilityEngine                           │
+│                   CapabliityEngine                           │
 │   Runs registered rules (UARTRule, ADCRule, EthernetRule)    │
 │   Each rule produces: classification + evidence + examples   │
 └──────────────────────────┬──────────────────────────────────┘
