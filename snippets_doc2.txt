@@ -1,0 +1,9 @@
+[KBYTE @ 2871]
+'ne Z STM32 package pin count: ΓÇó R for 64 pins 64ΓÇæpin package T STM32 flash memory size: ΓÇó C for 256 Kbytes ΓÇó 8 for 64 Kbytes 256ΓÇæKbyte flash memory UM3256 Ordering information UM3256 - Rev 2 page 3/35  3 D'
+
+[KBYTE @ 2889]
+' pin count: ΓÇó R for 64 pins 64ΓÇæpin package T STM32 flash memory size: ΓÇó C for 256 Kbytes ΓÇó 8 for 64 Kbytes 256ΓÇæKbyte flash memory UM3256 Ordering information UM3256 - Rev 2 page 3/35  3 Development environ'
+
+[KBYTE @ 2900]
+' ΓÇó R for 64 pins 64ΓÇæpin package T STM32 flash memory size: ΓÇó C for 256 Kbytes ΓÇó 8 for 64 Kbytes 256ΓÇæKbyte flash memory UM3256 Ordering information UM3256 - Rev 2 page 3/35  3 Development environment 3.1 Sy'
+

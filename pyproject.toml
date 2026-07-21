@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcu-analyzer"
+version = "1.0.0"
+description = "MCU Capability Analyzer for STM32 NUCLEO-U083RC"
+requires-python = ">=3.10"
+dependencies = [
+    "pypdf>=3.0.0",
+]
+
+[project.scripts]
+analyze = "src.main:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]

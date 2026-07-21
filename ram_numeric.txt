@@ -1,0 +1,14 @@
+=== docs/nucleo-u083rc.pdf ===
+  ['32 K' @ 11575]: 'ount ΓÇó C for 48 pins ΓÇó R for 64 pins 64 pins T STM32 flash memory size: ΓÇó 6 for 32 Kbytes ΓÇó 8 for 64 Kbytes ΓÇó B for 128 Kbytes ΓÇó C for 256 Kbytes ΓÇó E for 512 Kbytes'
+
+  ['64 K' @ 11593]: 'ns ΓÇó R for 64 pins 64 pins T STM32 flash memory size: ΓÇó 6 for 32 Kbytes ΓÇó 8 for 64 Kbytes ΓÇó B for 128 Kbytes ΓÇó C for 256 Kbytes ΓÇó E for 512 Kbytes ΓÇó G for 1 Mbyte ΓÇó'
+
+  ['128 K' @ 11611]: ' 64 pins T STM32 flash memory size: ΓÇó 6 for 32 Kbytes ΓÇó 8 for 64 Kbytes ΓÇó B for 128 Kbytes ΓÇó C for 256 Kbytes ΓÇó E for 512 Kbytes ΓÇó G for 1 Mbyte ΓÇó Z for 192 Kbytes 5'
+
+  ['256 K' @ 11630]: 'ash memory size: ΓÇó 6 for 32 Kbytes ΓÇó 8 for 64 Kbytes ΓÇó B for 128 Kbytes ΓÇó C for 256 Kbytes ΓÇó E for 512 Kbytes ΓÇó G for 1 Mbyte ΓÇó Z for 192 Kbytes 512 Kbytes -P STM32 '
+
+=== docs/u083rc_technical_reference.pdf ===
+  ['256 K' @ 2867]: 'ge pin count: ΓÇó R for 64 pins 64ΓÇæpin package T STM32 flash memory size: ΓÇó C for 256 Kbytes ΓÇó 8 for 64 Kbytes 256ΓÇæKbyte flash memory UM3256 Ordering information UM325'
+
+  ['64 K' @ 2886]: 'or 64 pins 64ΓÇæpin package T STM32 flash memory size: ΓÇó C for 256 Kbytes ΓÇó 8 for 64 Kbytes 256ΓÇæKbyte flash memory UM3256 Ordering information UM3256 - Rev 2 page 3/3'
+

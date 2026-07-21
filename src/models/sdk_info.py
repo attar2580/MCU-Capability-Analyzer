@@ -2,13 +2,16 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from .evidence import Evidence
+
 
 @dataclass
 class SDKExample:
-    """An SDK example with its path and reasoning."""
+    """An SDK example with its path, reasoning, and traceability."""
 
     path: str
     reason: str = ""
+    evidence: list[Evidence] = field(default_factory=list)
 
 
 @dataclass
