@@ -284,7 +284,7 @@ classifies files by their filename prefix:
 For the NUCLEO-U083RC, expected documents include the datasheet
 (`DS_STM32U083RC.pdf`) and the board user manual (`UM_NUCLEO-U083RC.pdf`).
 
-`NOTE: prefixes shown above are optional to use, you can simply use the original doc's names.`
+`**NOTE: prefixes shown above are optional to use, you can simply use the original doc's names.**`
 
 ### SDK (`sdk/`)
 
