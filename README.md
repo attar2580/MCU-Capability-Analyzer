@@ -49,7 +49,7 @@ cd mcu-analyzer
 pip install -r requirements.txt
 
 # Place official PDFs in docs/ and SDK in sdk/, then run:
-python -m src.main --board NUCLEO-U083RC --sdk sdk/STM32CubeU0-main --docs docs
+python -m src.main --board NUCLEO-U083RC --sdk sdk --docs docs
 ```
 
 Generated reports appear in `output/`.  The full walkthrough with
