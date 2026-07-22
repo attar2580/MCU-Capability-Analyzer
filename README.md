@@ -284,6 +284,8 @@ classifies files by their filename prefix:
 For the NUCLEO-U083RC, expected documents include the datasheet
 (`DS_STM32U083RC.pdf`) and the board user manual (`UM_NUCLEO-U083RC.pdf`).
 
+`NOTE: prefixes shown above are optional to use, you can simply use the original doc's names.`
+
 ### SDK (`sdk/`)
 
 Place the STM32Cube firmware package (e.g. `STM32CubeU0-main/`) in this
@@ -296,7 +298,7 @@ deep.
 ```sh
 python -m src.main \
     --board NUCLEO-U083RC \
-    --sdk sdk/STM32CubeU0-main \
+    --sdk sdk \
     --docs docs \
     --output output
 ```
@@ -311,7 +313,7 @@ python -m src.main \
 The tool can also be invoked via the installed console script:
 
 ```sh
-analyze --board NUCLEO-U083RC --sdk sdk/STM32CubeU0-main --docs docs
+analyze --board NUCLEO-U083RC --sdk sdk --docs docs
 ```
 
 ## Build Verification
