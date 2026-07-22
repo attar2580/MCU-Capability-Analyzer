@@ -1,0 +1,25 @@
+SDK Example Recommendations
+============================================================
+SDK: STM32Cube_FW_U0
+Version: 1.3.0
+Board: NUCLEO-U083RC
+
+--- LED blinking ---
+  Recommended example: GPIO_EXTI
+  Path: sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\GPIO\GPIO_EXTI
+  Reason: GPIO I/O toggle example (LED blinking)
+
+--- UART communication ---
+  Recommended example: UART_Printf
+  Path: sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_Printf
+  Reason: UART communication example
+
+--- ADC reading ---
+  Recommended example: ADC_Oversampling
+  Path: sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_Oversampling
+  Reason: ADC conversion example
+
+--- Timer-based execution ---
+  Recommended example: TIM_DMA
+  Path: sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\TIM\TIM_DMA
+  Reason: Timer-based execution example

@@ -1,0 +1,119 @@
+MCU Capability Analysis Report
+============================================================
+
+UART logging:
+  Supported
+  Evidence:
+    - Board resources extracted from stm32u083rc: adc, debug_uart (from stm32u083rc)
+    - Board resources extracted from u083rc_technical_reference: adc, debug_uart, led (from u083rc_technical_reference)
+    - Peripheral not mentioned in nucleo-u083rc: UART (from nucleo-u083rc)
+    - Peripheral confirmed in stm32u083rc: UART (from stm32u083rc)
+    - Peripheral not mentioned in u083rc_technical_reference: UART (from u083rc_technical_reference)
+    - Found example: LPUART_TwoBoards_ComIT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\UART\LPUART_TwoBoards_ComIT)
+    - Found example: LPUART_WakeUpFromStop (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\UART\LPUART_WakeUpFromStop)
+    - Found example: UART_AutoBaudrate_Detection (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\UART\UART_AutoBaudrate_Detection)
+    - Found example: UART_HyperTerminal_IT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\UART\UART_HyperTerminal_IT)
+    - Found example: LPUART_TwoBoards_ComIT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\LPUART_TwoBoards_ComIT)
+    - Found example: LPUART_WakeUpFromStop (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\LPUART_WakeUpFromStop)
+    - Found example: UART_AutoBaudrate_Detection (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_AutoBaudrate_Detection)
+    - Found example: UART_HyperTerminal_DMA (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_HyperTerminal_DMA)
+    - Found example: UART_HyperTerminal_IT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_HyperTerminal_IT)
+    - Found example: UART_Printf (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_Printf)
+    - Found example: UART_ReceptionToIdle_CircularDMA (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_ReceptionToIdle_CircularDMA)
+    - Found example: UART_TwoBoards_ComDMA (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_TwoBoards_ComDMA)
+    - Found example: UART_TwoBoards_ComIT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_TwoBoards_ComIT)
+    - Found example: UART_TwoBoards_ComPolling (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_TwoBoards_ComPolling)
+    - Found example: UART_WakeUpFromStop (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\UART\UART_WakeUpFromStop)
+    - Found example: USART_SlaveMode (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\USART\USART_SlaveMode)
+    - Found example: USART_SlaveMode_DMA (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\USART\USART_SlaveMode_DMA)
+    - Found example: UART_LowPower_HyperTerminal_DMA (from sdk\STM32CubeU0-main\Projects\STM32U083C-DK\Examples\UART\UART_LowPower_HyperTerminal_DMA)
+    - Found example: UART_ReceptionToIdle_CircularDMA (from sdk\STM32CubeU0-main\Projects\STM32U083C-DK\Examples\UART\UART_ReceptionToIdle_CircularDMA)
+    - Found example: UART_TwoBoards_ComDMA (from sdk\STM32CubeU0-main\Projects\STM32U083C-DK\Examples\UART\UART_TwoBoards_ComDMA)
+  SDK examples:
+    - LPUART_TwoBoards_ComIT
+      (Found example: LPUART_TwoBoards_ComIT)
+    - LPUART_WakeUpFromStop
+      (Found example: LPUART_WakeUpFromStop)
+    - UART_AutoBaudrate_Detection
+      (Found example: UART_AutoBaudrate_Detection)
+    - UART_HyperTerminal_IT
+      (Found example: UART_HyperTerminal_IT)
+    - LPUART_TwoBoards_ComIT
+      (Found example: LPUART_TwoBoards_ComIT)
+    - LPUART_WakeUpFromStop
+      (Found example: LPUART_WakeUpFromStop)
+    - UART_AutoBaudrate_Detection
+      (Found example: UART_AutoBaudrate_Detection)
+    - UART_HyperTerminal_DMA
+      (Found example: UART_HyperTerminal_DMA)
+    - UART_HyperTerminal_IT
+      (Found example: UART_HyperTerminal_IT)
+    - UART_Printf
+      (Found example: UART_Printf)
+    - UART_ReceptionToIdle_CircularDMA
+      (Found example: UART_ReceptionToIdle_CircularDMA)
+    - UART_TwoBoards_ComDMA
+      (Found example: UART_TwoBoards_ComDMA)
+    - UART_TwoBoards_ComIT
+      (Found example: UART_TwoBoards_ComIT)
+    - UART_TwoBoards_ComPolling
+      (Found example: UART_TwoBoards_ComPolling)
+    - UART_WakeUpFromStop
+      (Found example: UART_WakeUpFromStop)
+    - USART_SlaveMode
+      (Found example: USART_SlaveMode)
+    - USART_SlaveMode_DMA
+      (Found example: USART_SlaveMode_DMA)
+    - UART_LowPower_HyperTerminal_DMA
+      (Found example: UART_LowPower_HyperTerminal_DMA)
+    - UART_ReceptionToIdle_CircularDMA
+      (Found example: UART_ReceptionToIdle_CircularDMA)
+    - UART_TwoBoards_ComDMA
+      (Found example: UART_TwoBoards_ComDMA)
+
+ADC sampling:
+  Supported
+  Evidence:
+    - Board resources extracted from stm32u083rc: adc, debug_uart (from stm32u083rc)
+    - Board resources extracted from u083rc_technical_reference: adc, debug_uart, led (from u083rc_technical_reference)
+    - Peripheral not mentioned in nucleo-u083rc: ADC (from nucleo-u083rc)
+    - Peripheral confirmed in stm32u083rc: ADC (from stm32u083rc)
+    - Peripheral not mentioned in u083rc_technical_reference: ADC (from u083rc_technical_reference)
+    - Found example: ADC_SingleConversion_TriggerSW_IT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\ADC\ADC_SingleConversion_TriggerSW_IT)
+    - Found example: ADC_SingleConversion_TriggerTimer_DMA (from sdk\STM32CubeU0-main\Projects\NUCLEO-U031R8\Examples\ADC\ADC_SingleConversion_TriggerTimer_DMA)
+    - Found example: ADC_AnalogWatchdog (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_AnalogWatchdog)
+    - Found example: ADC_ContinuousConversion_TriggerSW (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_ContinuousConversion_TriggerSW)
+    - Found example: ADC_MultiChannelSingleConversion (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_MultiChannelSingleConversion)
+    - Found example: ADC_Oversampling (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_Oversampling)
+    - Found example: ADC_SingleConversion_TriggerSW_IT (from sdk\STM32CubeU0-main\Projects\NUCLEO-U083RC\Examples\ADC\ADC_SingleConversion_TriggerSW_IT)
+    - Found example: ADC_SingleConversion_TriggerTimer_DMA (from sdk\STM32CubeU0-main\Projects\STM32U083C-DK\Examples\ADC\ADC_SingleConversion_TriggerTimer_DMA)
+    - Found example: ADC_TemperatureSensor (from sdk\STM32CubeU0-main\Projects\STM32U083C-DK\Examples\ADC\ADC_TemperatureSensor)
+  SDK examples:
+    - ADC_SingleConversion_TriggerSW_IT
+      (Found example: ADC_SingleConversion_TriggerSW_IT)
+    - ADC_SingleConversion_TriggerTimer_DMA
+      (Found example: ADC_SingleConversion_TriggerTimer_DMA)
+    - ADC_AnalogWatchdog
+      (Found example: ADC_AnalogWatchdog)
+    - ADC_ContinuousConversion_TriggerSW
+      (Found example: ADC_ContinuousConversion_TriggerSW)
+    - ADC_MultiChannelSingleConversion
+      (Found example: ADC_MultiChannelSingleConversion)
+    - ADC_Oversampling
+      (Found example: ADC_Oversampling)
+    - ADC_SingleConversion_TriggerSW_IT
+      (Found example: ADC_SingleConversion_TriggerSW_IT)
+    - ADC_SingleConversion_TriggerTimer_DMA
+      (Found example: ADC_SingleConversion_TriggerTimer_DMA)
+    - ADC_TemperatureSensor
+      (Found example: ADC_TemperatureSensor)
+
+Native Ethernet:
+  Unsupported
+  Evidence:
+    - Peripheral not mentioned in nucleo-u083rc: Ethernet (from nucleo-u083rc)
+    - Peripheral not mentioned in stm32u083rc: Ethernet (from stm32u083rc)
+    - Peripheral not mentioned in u083rc_technical_reference: Ethernet (from u083rc_technical_reference)
+
+------------------------------------------------------------
+Summary: 3 peripheral(s) evaluated

@@ -1,0 +1,948 @@
+{
+  "vendor": "STMicroelectronics",
+  "board": "NUCLEO-U083RC",
+  "mcu": "STM32U083RC",
+  "cpu_core": "Arm Cortex-M0+",
+  "flash_kb": 256,
+  "ram_kb": 40,
+  "sdk": {
+    "name": "STM32Cube_FW_U0",
+    "version": "1.3.0"
+  },
+  "board_resources": {
+    "debug_uart": {
+      "instance": "USART2",
+      "tx_pin": "PA9",
+      "rx_pin": "PA10"
+    },
+    "adc": {
+      "instance": "ADC"
+    },
+    "led": {
+      "pin": "PA5",
+      "label": "LD4",
+      "color": "green"
+    }
+  },
+  "peripherals": [
+    {
+      "peripheral": "UART",
+      "classification": "SUPPORTED",
+      "evidence": [
+        {
+          "source_type": "documentation",
+          "document": "stm32u083rc",
+          "section": "",
+          "page": "36",
+          "notes": "Board resources extracted from stm32u083rc: adc, debug_uart"
+        },
+        {
+          "source_type": "documentation",
+          "document": "u083rc_technical_reference",
+          "section": "",
+          "page": "2",
+          "notes": "Board resources extracted from u083rc_technical_reference: adc, debug_uart, led"
+        },
+        {
+          "source_type": "documentation",
+          "document": "nucleo-u083rc",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in nucleo-u083rc: UART"
+        },
+        {
+          "source_type": "documentation",
+          "document": "stm32u083rc",
+          "section": "",
+          "page": "2",
+          "notes": "Peripheral confirmed in stm32u083rc: UART"
+        },
+        {
+          "source_type": "documentation",
+          "document": "u083rc_technical_reference",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in u083rc_technical_reference: UART"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: LPUART_TwoBoards_ComIT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_WakeUpFromStop",
+          "section": "",
+          "page": "",
+          "notes": "Found example: LPUART_WakeUpFromStop"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_AutoBaudrate_Detection",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_AutoBaudrate_Detection"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_HyperTerminal_IT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_HyperTerminal_IT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: LPUART_TwoBoards_ComIT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_WakeUpFromStop",
+          "section": "",
+          "page": "",
+          "notes": "Found example: LPUART_WakeUpFromStop"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_AutoBaudrate_Detection",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_AutoBaudrate_Detection"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_DMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_HyperTerminal_DMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_IT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_HyperTerminal_IT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_Printf",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_Printf"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComDMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_TwoBoards_ComDMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComIT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_TwoBoards_ComIT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComPolling",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_TwoBoards_ComPolling"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_WakeUpFromStop",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_WakeUpFromStop"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode",
+          "section": "",
+          "page": "",
+          "notes": "Found example: USART_SlaveMode"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode_DMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: USART_SlaveMode_DMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_LowPower_HyperTerminal_DMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_LowPower_HyperTerminal_DMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_TwoBoards_ComDMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: UART_TwoBoards_ComDMA"
+        }
+      ],
+      "sdk_examples": [
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: LPUART_TwoBoards_ComIT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_WakeUpFromStop",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_WakeUpFromStop",
+              "section": "",
+              "page": "",
+              "notes": "Found example: LPUART_WakeUpFromStop"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_AutoBaudrate_Detection",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_AutoBaudrate_Detection",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_AutoBaudrate_Detection"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_HyperTerminal_IT",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_HyperTerminal_IT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_HyperTerminal_IT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: LPUART_TwoBoards_ComIT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_WakeUpFromStop",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_WakeUpFromStop",
+              "section": "",
+              "page": "",
+              "notes": "Found example: LPUART_WakeUpFromStop"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_AutoBaudrate_Detection",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_AutoBaudrate_Detection",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_AutoBaudrate_Detection"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_DMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_DMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_HyperTerminal_DMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_IT",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_IT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_HyperTerminal_IT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_Printf",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_Printf",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_Printf"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComDMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComDMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_TwoBoards_ComDMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComIT",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComIT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_TwoBoards_ComIT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComPolling",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComPolling",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_TwoBoards_ComPolling"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_WakeUpFromStop",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_WakeUpFromStop",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_WakeUpFromStop"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode",
+              "section": "",
+              "page": "",
+              "notes": "Found example: USART_SlaveMode"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode_DMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode_DMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: USART_SlaveMode_DMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_LowPower_HyperTerminal_DMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_LowPower_HyperTerminal_DMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_LowPower_HyperTerminal_DMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_TwoBoards_ComDMA",
+          "reason": "UART communication example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_TwoBoards_ComDMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: UART_TwoBoards_ComDMA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "peripheral": "ADC",
+      "classification": "SUPPORTED",
+      "evidence": [
+        {
+          "source_type": "documentation",
+          "document": "stm32u083rc",
+          "section": "",
+          "page": "36",
+          "notes": "Board resources extracted from stm32u083rc: adc, debug_uart"
+        },
+        {
+          "source_type": "documentation",
+          "document": "u083rc_technical_reference",
+          "section": "",
+          "page": "2",
+          "notes": "Board resources extracted from u083rc_technical_reference: adc, debug_uart, led"
+        },
+        {
+          "source_type": "documentation",
+          "document": "nucleo-u083rc",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in nucleo-u083rc: ADC"
+        },
+        {
+          "source_type": "documentation",
+          "document": "stm32u083rc",
+          "section": "",
+          "page": "1",
+          "notes": "Peripheral confirmed in stm32u083rc: ADC"
+        },
+        {
+          "source_type": "documentation",
+          "document": "u083rc_technical_reference",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in u083rc_technical_reference: ADC"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_AnalogWatchdog",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_AnalogWatchdog"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_ContinuousConversion_TriggerSW",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_ContinuousConversion_TriggerSW"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_MultiChannelSingleConversion",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_MultiChannelSingleConversion"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_Oversampling",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_Oversampling"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+        },
+        {
+          "source_type": "SDK Examples Directory",
+          "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_TemperatureSensor",
+          "section": "",
+          "page": "",
+          "notes": "Found example: ADC_TemperatureSensor"
+        }
+      ],
+      "sdk_examples": [
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_AnalogWatchdog",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_AnalogWatchdog",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_AnalogWatchdog"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_ContinuousConversion_TriggerSW",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_ContinuousConversion_TriggerSW",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_ContinuousConversion_TriggerSW"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_MultiChannelSingleConversion",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_MultiChannelSingleConversion",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_MultiChannelSingleConversion"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_Oversampling",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_Oversampling",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_Oversampling"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+            }
+          ]
+        },
+        {
+          "path": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_TemperatureSensor",
+          "reason": "ADC conversion example",
+          "evidence": [
+            {
+              "source_type": "SDK Examples Directory",
+              "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_TemperatureSensor",
+              "section": "",
+              "page": "",
+              "notes": "Found example: ADC_TemperatureSensor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "peripheral": "Ethernet",
+      "classification": "UNSUPPORTED",
+      "evidence": [
+        {
+          "source_type": "documentation",
+          "document": "nucleo-u083rc",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in nucleo-u083rc: Ethernet"
+        },
+        {
+          "source_type": "documentation",
+          "document": "stm32u083rc",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in stm32u083rc: Ethernet"
+        },
+        {
+          "source_type": "documentation",
+          "document": "u083rc_technical_reference",
+          "section": "",
+          "page": "",
+          "notes": "Peripheral not mentioned in u083rc_technical_reference: Ethernet"
+        }
+      ]
+    }
+  ],
+  "data_sources": [
+    {
+      "source_type": "documentation",
+      "document": "nucleo-u083rc",
+      "section": "",
+      "page": "1",
+      "notes": "Vendor extracted from nucleo-u083rc: STMicroelectronics"
+    },
+    {
+      "source_type": "documentation",
+      "document": "stm32u083rc",
+      "section": "",
+      "page": "1",
+      "notes": "Vendor extracted from stm32u083rc: STMicroelectronics"
+    },
+    {
+      "source_type": "documentation",
+      "document": "u083rc_technical_reference",
+      "section": "",
+      "page": "1",
+      "notes": "Vendor extracted from u083rc_technical_reference: STMicroelectronics"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: LPUART_TwoBoards_ComIT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\LPUART_WakeUpFromStop",
+      "section": "",
+      "page": "",
+      "notes": "Found example: LPUART_WakeUpFromStop"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_AutoBaudrate_Detection",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_AutoBaudrate_Detection"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\UART\\UART_HyperTerminal_IT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_HyperTerminal_IT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_TwoBoards_ComIT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: LPUART_TwoBoards_ComIT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\LPUART_WakeUpFromStop",
+      "section": "",
+      "page": "",
+      "notes": "Found example: LPUART_WakeUpFromStop"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_AutoBaudrate_Detection",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_AutoBaudrate_Detection"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_DMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_HyperTerminal_DMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_HyperTerminal_IT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_HyperTerminal_IT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_Printf",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_Printf"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComDMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_TwoBoards_ComDMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComIT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_TwoBoards_ComIT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_TwoBoards_ComPolling",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_TwoBoards_ComPolling"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\UART\\UART_WakeUpFromStop",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_WakeUpFromStop"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode",
+      "section": "",
+      "page": "",
+      "notes": "Found example: USART_SlaveMode"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\USART\\USART_SlaveMode_DMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: USART_SlaveMode_DMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_LowPower_HyperTerminal_DMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_LowPower_HyperTerminal_DMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_ReceptionToIdle_CircularDMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_ReceptionToIdle_CircularDMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\UART\\UART_TwoBoards_ComDMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: UART_TwoBoards_ComDMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U031R8\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_AnalogWatchdog",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_AnalogWatchdog"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_ContinuousConversion_TriggerSW",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_ContinuousConversion_TriggerSW"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_MultiChannelSingleConversion",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_MultiChannelSingleConversion"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_Oversampling",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_Oversampling"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\NUCLEO-U083RC\\Examples\\ADC\\ADC_SingleConversion_TriggerSW_IT",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_SingleConversion_TriggerSW_IT"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_SingleConversion_TriggerTimer_DMA",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_SingleConversion_TriggerTimer_DMA"
+    },
+    {
+      "source_type": "SDK Examples Directory",
+      "document": "sdk\\STM32CubeU0-main\\Projects\\STM32U083C-DK\\Examples\\ADC\\ADC_TemperatureSensor",
+      "section": "",
+      "page": "",
+      "notes": "Found example: ADC_TemperatureSensor"
+    }
+  ]
+}
