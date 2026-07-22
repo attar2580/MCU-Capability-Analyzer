@@ -299,8 +299,7 @@ deep.
 python -m src.main \
     --board NUCLEO-U083RC \
     --sdk sdk \
-    --docs docs \
-    --output output
+    --docs docs
 ```
 
 | Argument | Required | Description |
