@@ -34,9 +34,26 @@ The MCU Capability Analyzer automates this evaluation:
                      sdk_recommendations.txt
                                capability_validation.txt
 
-The project was implemented for the STM32 NUCLEO-U083RC platform using
-the STM32CubeU0 firmware package.  The architecture is designed to
-support additional platforms through extension rather than modification.
+The current implementation targets the STM32 NUCLEO-U083RC platform using
+the STM32CubeU0 firmware package.  Vendor-specific extraction logic is
+intentionally isolated within the collector layer, allowing the remaining
+architecture — including the analyzer, capability engine, data models,
+and report writers — to be reused with limited changes for additional
+MCU families.
+
+## Quick Start
+
+```sh
+git clone <repository-url>
+cd mcu-analyzer
+pip install -r requirements.txt
+
+# Place official PDFs in docs/ and SDK in sdk/, then run:
+python -m src.main --board NUCLEO-U083RC --sdk sdk/STM32CubeU0-main --docs docs
+```
+
+Generated reports appear in `output/`.  The full walkthrough with
+expected inputs and output descriptions follows below.
 
 ## Features
 
@@ -93,7 +110,7 @@ The analysis pipeline is organised into four layers:
            │                          │
            ▼                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   CapabliityEngine                           │
+│                   CapabilityEngine                           │
 │   Runs registered rules (UARTRule, ADCRule, EthernetRule)    │
 │   Each rule produces: classification + evidence + examples   │
 └──────────────────────────┬──────────────────────────────────┘
@@ -106,8 +123,8 @@ The analysis pipeline is organised into four layers:
            │                  │                  │
            ▼                  ▼                  ▼
 ┌──────────────────┐ ┌──────────────┐ ┌──────────────────┐
-│   JsonWriter     │ │SdkReportWriter│ │ ValidationWriter │
-│ board_capabilities│ │sdk_recommendat│ │capability_validat│
+│   JsonWriter     │ │SdkReportWriter│ │ ValidationWriter│
+│board_capabilities│ │sdk_recommendat│ │capability_validat│
 │     .json        │ │  ions.txt    │ │    ion.txt       │
 └──────────────────┘ └──────────────┘ └──────────────────┘
 ```
@@ -163,7 +180,7 @@ the analysis.
 ├── docs/                         Place official PDF documentation here
 ├── sdk/                          Place STM32Cube firmware package here
 ├── output/                       Generated reports (created on first run)
-├── tests/                        Test suite (empty — see Future Improvements)
+├── tests/                        Test suite (empty — pending implementation)
 ├── pyproject.toml                Project metadata and entry point
 ├── requirements.txt              Python dependency (pypdf)
 └── README.md                     This file
@@ -219,6 +236,14 @@ A complete analysis run follows this sequence:
      └─────────────────────────────────────────────────────────┘
 ```
 
+## Prerequisites
+
+- **Python 3.10 or later**
+- **Official STM32 documentation** — MCU datasheet and board user manual
+  in PDF format (see [Expected Project Inputs](#expected-project-inputs))
+- **STM32CubeU0 firmware package** — the STM32Cube MCU package containing
+  SDK examples and metadata, available from [st.com](https://www.st.com)
+
 ## Installation
 
 Requires Python 3.10 or later.
@@ -229,7 +254,19 @@ cd mcu-analyzer
 pip install -r requirements.txt
 ```
 
-## Required Inputs
+## Expected Project Inputs
+
+Before running the analyzer, prepare the following directory structure:
+
+```
+project/
+├── docs/
+│   ├── DS_STM32U083RC.pdf       # MCU datasheet
+│   └── UM_NUCLEO-U083RC.pdf     # Board user manual
+├── sdk/
+│   └── STM32CubeU0-main/        # STM32Cube firmware package
+└── output/                      # Created automatically on first run
+```
 
 ### Documentation (`docs/`)
 
@@ -275,6 +312,16 @@ The tool can also be invoked via the installed console script:
 ```sh
 analyze --board NUCLEO-U083RC --sdk sdk/STM32CubeU0-main --docs docs
 ```
+
+## Build Verification
+
+A successful analysis run produces three files in the output directory:
+
+- `board_capabilities.json`
+- `sdk_recommendations.txt`
+- `capability_validation.txt`
+
+The tool exits with exit code 0 on success.
 
 ## Generated Outputs
 
@@ -443,16 +490,6 @@ formats, but the pipeline and reporting layers would remain unchanged.
 - **Only three peripheral rules are implemented.**  UART, ADC, and
   Ethernet are covered.  SPI, I2C, USB, and other peripherals are not
   evaluated.
-
-## Future Improvements
-
-- Additional MCU families (STM32G0, STM32L4, STM32H5) with family-specific
-  extraction profiles
-- CMSIS-Pack metadata parsing for SDK example discovery
-- Support for `reference_manual` documents in peripheral presence checks
-- A formal test suite (the `tests/` directory exists but is not populated)
-- HTML report output for easier visual review
-- Vendor-agnostic extraction via configurable pattern files
 
 ## AI Usage
 
