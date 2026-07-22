@@ -242,7 +242,7 @@ A complete analysis run follows this sequence:
 - **Official STM32 documentation** — MCU datasheet and board user manual
   in PDF format (see [Expected Project Inputs](#expected-project-inputs))
 - **STM32CubeU0 firmware package** — the STM32Cube MCU package containing
-  SDK examples and metadata, available from [st.com](https://www.st.com)
+  SDK examples and metadata, available from [STM32CubeU0](https://github.com/STMicroelectronics/STM32CubeU0)
 
 ## Installation
 
