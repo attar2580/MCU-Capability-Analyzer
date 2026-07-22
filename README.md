@@ -66,7 +66,8 @@ expected inputs and output descriptions follows below.
   tie-breaking)
 - Peripheral capability classification (5-tier classification model)
 - Full source traceability — every extracted value and every decision is
-  linked to the originating document
+  linked to the originating document; documentation-based evidence also
+  records the page number where the information was found
 - Three report formats: JSON (machine-readable), validation report
   (assignment-answer format), SDK recommendation (ranked example pick)
 
@@ -78,7 +79,7 @@ expected inputs and output descriptions follows below.
 | SDK example search | SDK collector enumerates `Projects/<board>/Examples/<category>/<example>/` matching UART, ADC, GPIO, TIM | ✓ |
 | Ranked recommendation | Deterministic scoring algorithm (+100 exact board, +60 MCU family, +40 U0 series, +20 category folder, +10 name match) with tie-breaking | ✓ |
 | Validation / Q&A | `capability_validation.txt` with human-readable answers for UART logging, ADC sampling, Native Ethernet | ✓ |
-| Traceability | Every evidence record carries `source_type`, `document`, and `notes` | ✓ |
+| Traceability | Every evidence record carries `source_type`, `document`, `notes`, and — for documentation-based evidence — the originating page number | ✓ |
 | Unknown handling | `Classification.NOT_ENOUGH_VERIFIED_INFORMATION` when evidence is absent; no fabricated default | ✓ |
 | CLI with `--board`, `--sdk`, `--docs`, `--output` | `argparse`-based entry point in `src/main.py` | ✓ |
 | JSON output | `board_capabilities.json` with complete schema | ✓ |
@@ -362,13 +363,14 @@ Three files are written to the output directory:
         {
           "source_type": "user_manual",
           "document": "UM_NUCLEO-U083RC",
+          "page": "53",
           "notes": "Peripheral confirmed in UM_NUCLEO-U083RC: UART"
         }
       ]
     }
   ],
   "data_sources": [
-    { "source_type": "user_manual", "document": "UM_NUCLEO-U083RC", "notes": "..." }
+    { "source_type": "user_manual", "document": "UM_NUCLEO-U083RC", "page": "1", "notes": "..." }
   ]
 }
 ```
@@ -394,9 +396,11 @@ without re-running the analysis.
 ### Evidence is attached to values, not to decisions
 
 Every extracted value carries an Evidence object that records which
-document provided the value and what specific text or metadata was used.
-This allows downstream consumers (including the validation writer) to
-present a complete trace from raw document to final classification.
+document provided the value, what specific text or metadata was used,
+and — for documentation-based evidence — the page number on which the
+information was found.  This allows downstream consumers (including the
+validation writer) to present a complete trace from raw document to
+final classification.
 
 ### Collectors never guess
 

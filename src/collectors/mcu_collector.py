@@ -15,6 +15,12 @@ class MCUCollector(BaseCollector):
     CPU core patterns are recognised; RISC-V, MIPS and ARM-A are out of scope.
     """
 
+    CPU_CORE_PATTERNS = [
+        re.compile(r"Arm\W*Cortex\W*M([0-9]+(?:\+)?)", re.IGNORECASE),
+        re.compile(r"ARM\s*Cortex[-\s]M([0-9]+(?:\+)?)", re.IGNORECASE),
+        re.compile(r"Cortex[-\s]M([0-9]+(?:\+)?)", re.IGNORECASE),
+    ]
+
     def collect(self, mcu_name: str, documents: list[Documentation]) -> MCUInfo:
         """Extract MCU information from the provided documents.
 
@@ -44,18 +50,19 @@ class MCUCollector(BaseCollector):
                 evidence=evidence_list,
             )
 
-        for doc, text in self._iter_texts(documents, evidence_list):
+        for doc, text, pages in self._iter_texts_with_pages(documents, evidence_list):
             extracted_cpu = self._extract_cpu_core(text, doc)
             if extracted_cpu:
                 cpu_core = extracted_cpu
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc.title or doc.source_path,
+                    page=self._find_page_for_any_pattern(pages, self.CPU_CORE_PATTERNS),
                     notes=f"CPU core extracted from {doc.title}: {cpu_core}",
                 ))
 
             # Peripheral presence check for classification accuracy
-            self._check_peripheral_presence(text, doc, evidence_list)
+            self._check_peripheral_presence(text, doc, evidence_list, pages)
 
             extracted_flash = self._extract_flash_kb(text, doc)
             if extracted_flash:
@@ -63,6 +70,7 @@ class MCUCollector(BaseCollector):
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc.title or doc.source_path,
+                    page=self._find_page_for_any_pattern(pages, self._size_patterns("flash")),
                     notes=f"Flash size extracted from {doc.title}: {flash_kb} KB",
                 ))
 
@@ -72,6 +80,7 @@ class MCUCollector(BaseCollector):
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc.title or doc.source_path,
+                    page=self._find_page_for_any_pattern(pages, self._size_patterns(r"(?:s)?ram")),
                     notes=f"RAM size extracted from {doc.title}: {ram_kb} KB",
                 ))
 
@@ -89,22 +98,13 @@ class MCUCollector(BaseCollector):
 
         Handles real STM32U0 datasheet formats::
 
-            Arm® Cortex®-M0+ 32-bit RISC core
-            Arm® Cortex®‑M0+ core            (U+2011 non-breaking hyphen)
+            Arm\xae Cortex\xae-M0+ 32-bit RISC core
+            Arm\xae Cortex\xae\xadM0+ core            (U+2011 non-breaking hyphen)
             ARM Cortex-M0+ CPU
         """
         head = text[:6000]
-        patterns = [
-            # Arm ... Cortex ... M0+ with any non-word separators (® spaces, hyphens,
-            # non-breaking hyphens U+2011, etc.)
-            r"Arm\W*Cortex\W*M([0-9]+(?:\+)?)",
-            # ARM Cortex-M0+ (common abbreviation)
-            r"ARM\s*Cortex[-\s]M([0-9]+(?:\+)?)",
-            # Plain Cortex-M0+
-            r"Cortex[-\s]M([0-9]+(?:\+)?)",
-        ]
-        for p in patterns:
-            m = re.search(p, head, re.IGNORECASE)
+        for p in MCUCollector.CPU_CORE_PATTERNS:
+            m = p.search(head)
             if m:
                 raw = m.group(0)
                 normalised = re.sub(
@@ -127,6 +127,28 @@ class MCUCollector(BaseCollector):
         """Extract RAM size in kilobytes from document text."""
         return MCUCollector._extract_size(text, r"(?:s)?ram")
 
+    @classmethod
+    def _size_patterns(cls, kind: str) -> list[re.Pattern]:
+        """Return compiled size-extraction patterns for the given *kind*.
+
+        Patterns are ordered by priority: MB first, then KB, then KB alt.
+        This matches the check order used by ``_extract_size``.
+        """
+        return [
+            re.compile(
+                rf"(?i)(\d+(?:\.\d+)?)\s*MB\s*(?:of\s+)?(?:{kind})",
+            ),
+            re.compile(
+                rf"(?i)(\d+)\s*[-\u2011]?\s*"
+                rf"(?:K(?:B|Byte|bytes?))\s*"
+                rf"(?:of\s+)?"
+                rf"(?:{kind})"
+            ),
+            re.compile(
+                rf"(?i)(\d+)\s*[-\u2011]?\s*K\s+(?:of\s+)?(?:{kind})"
+            ),
+        ]
+
     @staticmethod
     def _extract_size(text: str, kind: str) -> int:
         """Extract a memory size in KB from text. Handles KB and MB units.
@@ -139,30 +161,17 @@ class MCUCollector(BaseCollector):
             40-Kbyte SRAM
             1 MB Flash
         """
-        # KB pattern: flexible unit and trailing text after kind keyword
-        pat_kb = re.compile(
-            rf"(?i)(\d+)\s*[-\u2011]?\s*"
-            rf"(?:K(?:B|Byte|bytes?))\s*"
-            rf"(?:of\s+)?"
-            rf"(?:{kind})"
-        )
-        pat_kb_alt = re.compile(
-            rf"(?i)(\d+)\s*[-\u2011]?\s*K\s+(?:of\s+)?(?:{kind})"
-        )
-        pat_mb = re.compile(
-            rf"(?i)(\d+(?:\.\d+)?)\s*MB\s*(?:of\s+)?(?:{kind})",
-        )
-
-        m = pat_mb.search(text)
+        patterns = MCUCollector._size_patterns(kind)
+        m = patterns[0].search(text)
         if m:
             value = float(m.group(1))
             return int(value * 1024)
 
-        m = pat_kb.search(text)
+        m = patterns[1].search(text)
         if m:
             return int(m.group(1))
 
-        m = pat_kb_alt.search(text)
+        m = patterns[2].search(text)
         if m:
             return int(m.group(1))
 
@@ -171,6 +180,7 @@ class MCUCollector(BaseCollector):
     @staticmethod
     def _check_peripheral_presence(
         text: str, doc: Documentation, evidence_list: list[Evidence],
+        pages: list[str] | None = None,
     ) -> None:
         """Check which key peripherals are mentioned in the document and add evidence.
 
@@ -197,10 +207,16 @@ class MCUCollector(BaseCollector):
                 rf"\bno\s+{kw}\b" in lower or rf"\bnot\s+{kw}\b" in lower
                 for kw in keywords
             )
+            page = ""
+            if pages and found and not negated:
+                kw_patterns = [re.compile(re.escape(kw), re.IGNORECASE) for kw in keywords]
+                page = BaseCollector._find_page_for_any_pattern(pages, kw_patterns)
+
             if found and not negated:
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc_ref,
+                    page=page,
                     notes=f"Peripheral confirmed in {doc_ref}: {name}",
                 ))
             else:

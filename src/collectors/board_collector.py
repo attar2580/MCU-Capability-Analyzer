@@ -19,6 +19,18 @@ class BoardCollector(BaseCollector):
     is intentionally out of scope.
     """
 
+    _VENDOR_PATTERNS = [
+        re.compile(r"stmicroelectronics", re.IGNORECASE),
+        re.compile(r"www\.st\.com", re.IGNORECASE),
+    ]
+
+    _RESOURCE_KEYWORD_PATTERNS = [
+        re.compile(r"\b(?:LED|LD\d*)\b", re.IGNORECASE),
+        re.compile(r"\b(?:UART\d*|USART\d*|VCP|virtual\s*com)\b", re.IGNORECASE),
+        re.compile(r"\bADC\d*\b", re.IGNORECASE),
+        re.compile(r"\b(?:ETH\d*|ETHERNET)\b", re.IGNORECASE),
+    ]
+
     def collect(self, board_name: str, documents: list[Documentation]) -> BoardInfo:
         """Extract board information from the provided documents.
 
@@ -46,13 +58,14 @@ class BoardCollector(BaseCollector):
                 evidence=evidence_list,
             )
 
-        for doc, text in self._iter_texts(documents, evidence_list):
+        for doc, text, pages in self._iter_texts_with_pages(documents, evidence_list):
             extracted_vendor = self._extract_vendor(text, doc)
             if extracted_vendor:
                 vendor = extracted_vendor
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc.title or doc.source_path,
+                    page=self._find_page_for_any_pattern(pages, self._VENDOR_PATTERNS),
                     notes=f"Vendor extracted from {doc.title}: {extracted_vendor}",
                 ))
 
@@ -65,6 +78,7 @@ class BoardCollector(BaseCollector):
                 evidence_list.append(Evidence(
                     source_type=doc.document_type,
                     document=doc.title or doc.source_path,
+                    page=self._find_page_for_any_pattern(pages, self._RESOURCE_KEYWORD_PATTERNS),
                     notes=f"Board resources extracted from {doc.title}: {resource_keys}",
                 ))
 

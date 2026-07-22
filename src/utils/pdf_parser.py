@@ -10,6 +10,31 @@ class PdfParser:
     """Utility for extracting text and structure from PDF documents."""
 
     @staticmethod
+    def extract_pages(path: str) -> list[str]:
+        """Extract text per page from a PDF file.
+
+        Args:
+            path: Path to the PDF file.
+
+        Returns:
+            List of page text strings, one entry per page.
+            Empty pages are omitted.
+
+        Raises:
+            FileNotFoundError: If the PDF file does not exist.
+        """
+        if not os.path.isfile(path):
+            raise FileNotFoundError(f"PDF not found: {path}")
+
+        reader = PdfReader(path)
+        pages: list[str] = []
+        for page in reader.pages:
+            text = page.extract_text()
+            if text:
+                pages.append(text)
+        return pages
+
+    @staticmethod
     def extract_text(path: str) -> str:
         """Extract all text content from a PDF file.
 
